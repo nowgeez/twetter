@@ -9,7 +9,14 @@ class TwetsController < ApplicationController
   #   @twets # => All twets defaultly shown to the authenticated user.
   #
   def index
-    get_twets
+
+    if params[:username]
+      username = params[:username]
+      logger.debug(username)
+      @twets = User.find_by(:username => username).twets
+    else
+      get_twets
+    end
   end
 
   # POST /twets
