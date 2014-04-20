@@ -1,6 +1,6 @@
 class TwetsController < ApplicationController
   # All actions in this controller require the presence of an authenticated user.
-  before_filter :authenticate_user!
+  before_filter :authenticate_user!, :except => :index
 
   # GET /twets
   #
@@ -9,7 +9,13 @@ class TwetsController < ApplicationController
   #   @twets # => All twets defaultly shown to the authenticated user.
   #
   def index
-    get_twets
+    if params[:username]
+      username = params[:username]
+      logger.debug(username)
+      @twets = User.find_by(:username => username).twets
+    else
+      get_twets
+    end
   end
 
   # POST /twets

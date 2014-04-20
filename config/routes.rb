@@ -5,13 +5,20 @@ Twetter::Application.routes.draw do
 
   authenticated :user do
     resources :follows, :except => [:new, :edit, :show, :update]
+<<<<<<< HEAD
     resources :twets, :except => [:new, :edit, :show, :update]
     get ':username', :to => 'twets#index', :as => :profile
+=======
+    resources :twets, :except => [:new, :edit, :show, :update, :index]
+>>>>>>> myMentorBranch
     root :to => 'follows#index', :as => :user_root
   end
 
   # You can have the root of your site routed with "root"
   root :to => 'home#index'
+
+  get '/:username' => 'twets#index', as: 'user_twets'
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
