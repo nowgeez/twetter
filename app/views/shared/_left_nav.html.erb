@@ -1,4 +1,7 @@
 <div class="col-md-4">
+  <ul>
+    <%= image_tag avatar_url(@user) %>
+  </ul>
   <ul class="nav nav-pills nav-stacked well text-left">
     <li>
       <%= content_tag :strong, current_user.name %>
