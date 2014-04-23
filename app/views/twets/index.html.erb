@@ -12,6 +12,7 @@
     <hr />
     <ol class="list-unstyled">
 <<<<<<< HEAD
+<<<<<<< HEAD
        <% @twets.each do |twet| -%>
        <li>
          <%= content_tag :strong, twet.user.name, :class => 'pull-left text-middle' %>
@@ -38,6 +39,9 @@
       </li>
       <li><hr></li>
       <% end -%>
+=======
+      <%= render :partial => 'twet', :collection => @twets %>
+>>>>>>> gravatarBranch
     </ol>
   </div>
 </div>

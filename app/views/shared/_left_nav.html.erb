@@ -1,6 +1,7 @@
 <div class="col-md-4">
   <ul class="nav nav-pills nav-stacked well text-left">
     <li>
+<<<<<<< HEAD
       <%= content_tag :strong, current_user.name %>
     </li>
     <li>
@@ -9,7 +10,21 @@
 =======
       <%= content_tag :small, '@'+current_user.username%>
 >>>>>>> myMentorBranch
+=======
+      <table class="table no-border">
+        <tr>
+        <td>
+        <%= image_tag current_user.gravatar_url %>
+        </td>
+        <td style=" padding-top: 1.8em">
+        <%= content_tag :strong, current_user.name %>
+        <%= content_tag :small, '@'+current_user.username %>
+        </td>
+        </tr>
+      </table>
+>>>>>>> gravatarBranch
     </li>
+
     <li>
       <table class="table table-bordered stats">
         <tbody>

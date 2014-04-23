@@ -19,6 +19,7 @@ module ApplicationHelper
     end
   end
 
+
   # Generates a left navigation link setting the class according to the result of a
   # call to the #active_class method.
   #
