@@ -1,4 +1,5 @@
 <li>
+  <%= image_tag twet.user.gravatar_url %>
   <%= content_tag :strong, twet.user.name, :class => 'pull-left text-middle' %>
   <%= content_tag :small, "@"+twet.user.username, :class => 'text-muted pad-10 text-middle' %>
   <%= content_tag :small, twet.created_at.strftime("%b %-d"), :class => 'text-muted text-middle pull-right' %>

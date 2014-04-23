@@ -10,6 +10,10 @@ class User < ActiveRecord::Base
   validates :name, :presence => true
   validates :username, :presence => true, :uniqueness => true
 
+  include Gravtastic
+  gravtastic  :filetype => :png,
+              :size => 73
+
   # Scope method to get all users except the one passed.
   #
   def self.all_except(user)
@@ -22,4 +26,6 @@ class User < ActiveRecord::Base
   def all_twets
     Twet.by_user_ids(id, *follows.map(&:following_id))
   end
+
+
 end
